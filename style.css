@@ -283,11 +283,13 @@ body {
 }
 
 .dog-img {
-    width: 180px;
+    width: 280px;   /* increased size */
+    max-width: 80vw;
     height: auto;
     user-select: none;
     pointer-events: none;
 }
+
 
 
 .dog-board {
