@@ -2,37 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>I’m Sorry</title>
+    <title>For You</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
-    <h1>I’m Sorry</h1>
-
-    <p>
-        I understand why you’re upset. I crossed a boundary, and that was wrong.
-        I’m truly sorry for hurting you.
-    </p>
-
-    <p>
-        What I believed was care felt like control to you.
-        I see that now, and I respect how it made you feel.
-    </p>
-
-    <p>
-        My questions came from fear, not from a lack of trust.
-        Still, that fear is my responsibility — not yours.
-        I am working on myself.
-    </p>
-
-    <p class="final">
-        Take all the time you need. I LOVE YOU
-    </p>
-
-    <footer>— Om</footer>
+<div class="bubble-container">
+    <button class="bubble" onclick="openModal('memories')">Our Memories</button>
+    <button class="bubble" onclick="openModal('apology')">My Apology</button>
+    <button class="bubble" onclick="openModal('question')">Do You Love Me?</button>
 </div>
 
+<!-- MODAL -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">×</span>
+        <div id="modal-body"></div>
+    </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
