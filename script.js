@@ -1,8 +1,12 @@
+const modal = document.getElementById("modal");
+
 function openModal(type) {
     const modal = document.getElementById("modal");
     const body = document.getElementById("modal-body");
 
-   if (type === "memories") {
+if (type === "memories") {
+    modal.classList.add("fullscreen");
+
     body.innerHTML = `
         <h3>Our Memories</h3>
 
@@ -35,6 +39,7 @@ function openModal(type) {
 }
 
 
+
     if (type === "apology") {
         body.innerHTML = `
             <h3>My Apology</h3>
@@ -62,7 +67,9 @@ function openModal(type) {
 }
 
 function closeModal() {
-    document.getElementById("modal").style.display = "none";
+    const modal = document.getElementById("modal");
+    modal.style.display = "none";
+    modal.classList.remove("fullscreen");
 }
 
 function answer(choice) {
