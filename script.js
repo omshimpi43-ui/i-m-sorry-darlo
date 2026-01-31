@@ -81,23 +81,33 @@ function answer(choice) {
     }
 }
 /* ===== Falling Flowers Generator ===== */
-const flowers = ["🌸", "🌼", "🌷", "🌺", "💐"];
+const flowerImages = [
+  "flower1.png",
+  "flower2.png",
+  "flower3.png",
+  "flower4.png"
+];
+
 
 function createFlower() {
-    const flower = document.createElement("div");
-    flower.classList.add("flower");
-    flower.innerText = flowers[Math.floor(Math.random() * flowers.length)];
+  const flower = document.createElement("img");
+  flower.src =
+    flowerImages[Math.floor(Math.random() * flowerImages.length)];
 
-    flower.style.left = Math.random() * 100 + "vw";
-    flower.style.fontSize = 20 + Math.random() * 15 + "px";
-    flower.style.animationDuration = 6 + Math.random() * 6 + "s";
+  flower.classList.add("flower");
 
-    document.getElementById("flowers-container").appendChild(flower);
+  flower.style.left = Math.random() * 100 + "vw";
+  flower.style.top = "-10vh";
+  flower.style.width = 30 + Math.random() * 30 + "px";
+  flower.style.animationDuration = 8 + Math.random() * 6 + "s";
 
-    setTimeout(() => {
-        flower.remove();
-    }, 12000);
+  document.getElementById("flowers-container").appendChild(flower);
+
+  setTimeout(() => {
+    flower.remove();
+  }, 15000);
 }
+
 /* ==== Butterfly PNG Generator ==== */
 
 const butterflyImages = [
