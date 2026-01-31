@@ -54,3 +54,23 @@ function answer(choice) {
         text.innerHTML = "Thank you for being honest.";
     }
 }
+/* ===== Falling Flowers Generator ===== */
+const flowers = ["🌸", "🌼", "🌷", "🌺", "💐"];
+
+function createFlower() {
+    const flower = document.createElement("div");
+    flower.classList.add("flower");
+    flower.innerText = flowers[Math.floor(Math.random() * flowers.length)];
+
+    flower.style.left = Math.random() * 100 + "vw";
+    flower.style.fontSize = 20 + Math.random() * 15 + "px";
+    flower.style.animationDuration = 6 + Math.random() * 6 + "s";
+
+    document.getElementById("flowers-container").appendChild(flower);
+
+    setTimeout(() => {
+        flower.remove();
+    }, 12000);
+}
+
+setInterval(createFlower, 500);
