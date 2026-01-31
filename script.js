@@ -98,5 +98,32 @@ function createFlower() {
         flower.remove();
     }, 12000);
 }
+/* ==== Butterfly PNG Generator ==== */
+
+const butterflyImages = [
+  "butterfly1.png",
+  "butterfly2.png",
+  "butterfly3.png"
+];
+
+function createButterfly() {
+  const butterfly = document.createElement("img");
+  butterfly.src =
+    butterflyImages[Math.floor(Math.random() * butterflyImages.length)];
+
+  butterfly.classList.add("butterfly");
+
+  butterfly.style.left = Math.random() * 100 + "vw";
+  butterfly.style.top = "110vh";
+  butterfly.style.animationDuration = 10 + Math.random() * 6 + "s";
+
+  document.body.appendChild(butterfly);
+
+  setTimeout(() => {
+    butterfly.remove();
+  }, 16000);
+}
+
+setInterval(createButterfly, 3500);
 
 setInterval(createFlower, 500);
