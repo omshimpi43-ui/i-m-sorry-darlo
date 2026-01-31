@@ -1,28 +1,28 @@
-/* ================== GLOBAL ================== */
+/* ================== RESET & BASE ================== */
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
+  font-family: "Segoe UI", system-ui, sans-serif;
 }
 
 body {
-  background: #dff6ee; /* emerald mint */
-  overflow: hidden;
   height: 100vh;
+  background: #dff6ee; /* emerald / mint */
+  overflow: hidden;
 }
 
-/* ================== CORNER BUBBLE BUTTONS ================== */
+/* ================== TRANSPARENT CORNER BUTTONS ================== */
 
 .bubble {
   width: 160px;
   height: 160px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 2px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 2px solid rgba(255, 255, 255, 0.45);
 
   display: flex;
   align-items: center;
@@ -36,19 +36,19 @@ body {
 
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
-  z-index: 5;
+  z-index: 6;
 }
 
 .bubble:hover {
   transform: scale(1.08);
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.42);
 }
 
 .bubble:active {
   transform: scale(0.95);
 }
 
-/* ---- Corner Positions ---- */
+/* ---- Corner placement ---- */
 
 .bubble.top-left {
   position: fixed;
@@ -68,7 +68,7 @@ body {
   left: 20px;
 }
 
-/* ================== HEART ================== */
+/* ================== HEART (BOTTOM RIGHT, BEATING) ================== */
 
 .heart {
   position: fixed;
@@ -76,11 +76,10 @@ body {
   right: 20px;
   font-size: 52px;
   color: #22c55e;
-  z-index: 6;
+  z-index: 7;
   animation: heartbeat 1.2s infinite;
 }
 
-/* Heartbeat animation */
 @keyframes heartbeat {
   0%   { transform: scale(1); }
   20%  { transform: scale(1.15); }
@@ -90,18 +89,66 @@ body {
   100% { transform: scale(1); }
 }
 
-/* ================== BOWS ================== */
+/* ================== CENTER DOG ================== */
+
+.center-dog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  text-align: center;
+  z-index: 5;
+}
+
+.dog-img {
+  width: 280px;
+  max-width: 80vw;
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ================== LET’S TRY AGAIN BUTTON ================== */
+
+.retry-container {
+  margin-top: 26px;
+}
+
+.retry-btn {
+  padding: 18px 42px;
+  font-size: 22px;
+  font-weight: 600;
+  border-radius: 36px;
+  background: #9c6b3b;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.retry-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.3);
+}
+
+.retry-btn:active {
+  transform: scale(0.95);
+}
+
+/* ================== BOWS (FIXED & FLOATING) ================== */
 
 .bow {
   position: fixed;
-  width: 55px;          /* restored size */
+  width: 55px;
   height: auto;
-  z-index: 6;
+  z-index: 7;
   pointer-events: none;
   animation: bowFloat 6s ease-in-out infinite;
 }
 
-/* Individual positions */
+/* Individual bow positions */
 .bow-1 {
   top: 15px;
   left: 50%;
@@ -124,58 +171,10 @@ body {
   transform: translateX(50%);
 }
 
-/* Gentle floating motion */
 @keyframes bowFloat {
   0%   { transform: translateY(0); }
   50%  { transform: translateY(-6px); }
   100% { transform: translateY(0); }
-}
-
-/* ================== CENTER DOG ================== */
-
-.center-dog {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -55%);
-  text-align: center;
-  z-index: 4;
-}
-
-.dog-img {
-  width: 280px;
-  max-width: 80vw;
-  height: auto;
-  user-select: none;
-  pointer-events: none;
-}
-
-/* ================== LET'S TRY AGAIN BUTTON ================== */
-
-.retry-container {
-  margin-top: 25px;
-}
-
-.retry-btn {
-  padding: 18px 40px;
-  font-size: 22px;
-  font-weight: 600;
-  border-radius: 35px;
-  background: #9c6b3b;
-  color: white;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.retry-btn:hover {
-  transform: scale(1.08);
-  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.3);
-}
-
-.retry-btn:active {
-  transform: scale(0.95);
 }
 
 /* ================== FALLING FLOWERS (PNG) ================== */
@@ -229,32 +228,32 @@ body {
   }
 }
 
-/* ================== MODAL (Memories / Apology) ================== */
+/* ================== MODAL (MEMORIES / APOLOGY) ================== */
 
 #modal {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.45);
   display: none;
   align-items: center;
   justify-content: center;
-  z-index: 10;
+  z-index: 20;
 }
 
 .modal-content {
-  background: white;
+  background: #fff;
   padding: 30px;
   border-radius: 16px;
   max-width: 90vw;
   max-height: 90vh;
   overflow-y: auto;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
 }
 
 .modal-content img {
   width: 100%;
   border-radius: 12px;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
 }
 
 .modal-close {
