@@ -330,3 +330,22 @@ body {
     opacity: 1;
   }
 }
+.flower {
+  position: fixed;
+  pointer-events: none;
+  z-index: 2;
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fall {
+  from {
+    transform: translateY(-10vh) rotate(0deg);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 1;
+  }
+}
