@@ -83,8 +83,58 @@ function openMemories() {
 
 
 function openApology() {
-  openModal("<h2>My Apology</h2><p>i understand why r u upset , i was wrong , i m sorry for hurting you , i want to know not argue , i will fix this</p>");
+  const modal = document.getElementById("modal");
+  const modalContent = document.getElementById("modal-content");
+
+  modalContent.innerHTML = `
+    <h2>My Apology</h2>
+    <p class="apology-text">
+      i understand why r u upset , i was wrong , i m sorry for hurting you , i want to know not argue , i will fix this
+      <br><br>
+
+      i intended care <br>
+      u experienced control
+      <br><br>
+
+      from u r pov its surviellance , lack of trust <br>
+      but for me it is knowing about you
+      <br><br>
+
+      i will stop asking where are you with whom are you what are you doing whats the need
+      <br><br>
+
+      i understand now that my questions made you feel controlled but that wasnt my intention and i respect how it felt to you
+      <br><br>
+
+      <strong>I M SORRY</strong><br>
+      <strong>I TRUST YOU</strong><br>
+      <strong>I WILL GIVE U SPACE</strong>
+      <br><br>
+
+      i do ask u questions because i fear losing you
+      <br><br>
+
+      i cannot protect you just by knowing where r u <br>
+      i cannot prevent any loss by knowing where r u <br>
+      but the one u r with can do both protect and prevent loss
+      <br><br>
+
+      i ask you because <br>
+      i feel uneasy <br>
+      i feel frightened <br>
+      i imagine scenarios
+      <br><br>
+
+      i realise my fear made me cross your boundaries <br>
+      i wasnt trying to control you i was anxious about you <br>
+      still this is my resposibility not yours <br>
+      i will work on it
+    </p>
+  `;
+
+  modal.style.display = "flex";
 }
+
 
 function openLove() {
   openModal(`
