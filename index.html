@@ -8,12 +8,23 @@
 </head>
 <body>
 
-<div class="bubble-container">
-    <button class="bubble" onclick="openModal('memories')">Our Memories</button>
-    <button class="bubble" onclick="openModal('apology')">My Apology</button>
-    <button class="bubble" onclick="openModal('question')">Do You Love Me?</button>
-</div>
+<!-- Bubbles -->
+<button class="bubble top-left" onclick="openModal('memories')">
+    Our Memories
+</button>
 
+<button class="bubble top-right" onclick="openModal('apology')">
+    My Apology
+</button>
+
+<button class="bubble bottom-left" onclick="openModal('question')">
+    Do You Love Me?
+</button>
+
+<!-- Heart -->
+<div class="heart bottom-right">❤</div>
+
+<!-- Modal -->
 <div id="modal" class="modal">
     <div class="modal-content">
         <span class="close" onclick="closeModal()">×</span>
