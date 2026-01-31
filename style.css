@@ -170,3 +170,23 @@ body {
     transform: translateX(120vw);
   }
 }
+/* Beating Heart (Bottom Right) */
+.beating-heart {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 60px;
+  height: auto;
+  z-index: 20;
+  animation: heartbeat 1.2s infinite ease-in-out;
+  pointer-events: none;
+}
+
+/* Heartbeat animation */
+@keyframes heartbeat {
+  0%   { transform: scale(1); }
+  25%  { transform: scale(1.15); }
+  40%  { transform: scale(1); }
+  60%  { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
