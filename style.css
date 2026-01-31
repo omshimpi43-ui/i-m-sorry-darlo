@@ -310,3 +310,23 @@ body {
     50%  { transform: translate(-50%, -50%) translateY(-10px); }
     100% { transform: translate(-50%, -50%) translateY(0); }
 }
+.butterfly {
+  position: fixed;
+  width: 70px;
+  pointer-events: none;
+  z-index: 4;
+  animation-name: butterflyFly;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes butterflyFly {
+  from {
+    transform: translateY(0) scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(-140vh) scale(1.2);
+    opacity: 1;
+  }
+}
