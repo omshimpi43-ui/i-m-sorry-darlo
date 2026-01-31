@@ -74,9 +74,61 @@ body {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  font-size: 48px;
+  font-size: 52px;
   color: #22c55e;
   z-index: 6;
+  animation: heartbeat 1.2s infinite;
+}
+
+/* Heartbeat animation */
+@keyframes heartbeat {
+  0%   { transform: scale(1); }
+  20%  { transform: scale(1.15); }
+  40%  { transform: scale(1); }
+  60%  { transform: scale(1.2); }
+  80%  { transform: scale(1); }
+  100% { transform: scale(1); }
+}
+
+/* ================== BOWS ================== */
+
+.bow {
+  position: fixed;
+  width: 55px;          /* restored size */
+  height: auto;
+  z-index: 6;
+  pointer-events: none;
+  animation: bowFloat 6s ease-in-out infinite;
+}
+
+/* Individual positions */
+.bow-1 {
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bow-2 {
+  top: 15px;
+  right: 40px;
+}
+
+.bow-3 {
+  bottom: 15px;
+  left: 40px;
+}
+
+.bow-4 {
+  bottom: 15px;
+  right: 50%;
+  transform: translateX(50%);
+}
+
+/* Gentle floating motion */
+@keyframes bowFloat {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
 }
 
 /* ================== CENTER DOG ================== */
