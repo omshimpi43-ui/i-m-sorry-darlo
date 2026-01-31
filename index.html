@@ -2,54 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>I'm Sorry</title>
-
-  <!-- Main Styles -->
+  <title>I’m Sorry</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Floating decorations -->
-  <div id="flowers-container"></div>
-  <div id="bows-container"></div>
+  <!-- Floating items container -->
+  <div id="float-container"></div>
 
   <!-- Corner Buttons -->
-  <button class="corner-btn top-left" onclick="openMemories()">
-    Our Memories
-  </button>
-
-  <button class="corner-btn top-right" onclick="openApology()">
-    My Apology
-  </button>
-
-  <button class="corner-btn bottom-left" onclick="openLove()">
-    Do You Love Me?
-  </button>
+  <button class="corner-btn top-left" onclick="openMemories()">Our Memories</button>
+  <button class="corner-btn top-right" onclick="openApology()">My Apology</button>
+  <button class="corner-btn bottom-left" onclick="openLove()">Do You Love Me?</button>
 
   <!-- Beating Heart -->
-  <div class="heart-container">
-    <img src="heart.png" alt="heart" class="beating-heart">
-  </div>
+  <img src="heart.png" id="heart" alt="heart">
 
-  <!-- Center Content -->
-  <div class="center-content">
-    <img src="dog.png" alt="Cute Dog" class="center-dog">
-
-    <button class="try-again-btn" onclick="location.reload()">
-      LET’S TRY AGAIN
-    </button>
+  <!-- Center Dog -->
+  <div id="dog-container">
+    <img src="dog.png" alt="Cute Dog">
+    <button id="retry-btn">LET’S TRY AGAIN</button>
   </div>
 
   <!-- Modal -->
-  <div id="modal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">×</span>
+  <div id="modal">
+    <div id="modal-content">
+      <span id="close" onclick="closeModal()">×</span>
       <div id="modal-body"></div>
     </div>
   </div>
 
-  <!-- Script -->
   <script src="script.js"></script>
 </body>
 </html>
