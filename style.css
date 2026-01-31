@@ -1,249 +1,124 @@
-/* =========================
-   GLOBAL RESET
-========================= */
-
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Segoe UI", sans-serif;
 }
 
 body {
-  width: 100vw;
   height: 100vh;
+  background: #dff6ef;
   overflow: hidden;
-  background: #dff7ef;
 }
 
-/* =========================
-   CORNER BUTTONS
-========================= */
+/* FLOATING PNGs */
+#float-container img {
+  position: fixed;
+  width: 40px;
+  pointer-events: none;
+  animation: fall linear forwards;
+}
 
+@keyframes fall {
+  from {
+    transform: translateY(-60px) rotate(0deg);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0.8;
+  }
+}
+
+/* CORNER BUTTONS */
 .corner-btn {
   position: fixed;
-  width: 140px;
-  height: 140px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.55);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: rgba(255, 255, 255, 0.45);
+  border: none;
   font-size: 16px;
   font-weight: 600;
-  color: #2b5f4b;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   z-index: 10;
 }
 
-.corner-btn:hover {
-  transform: scale(1.08);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
-}
+.top-left { top: 20px; left: 20px; }
+.top-right { top: 20px; right: 20px; }
+.bottom-left { bottom: 20px; left: 20px; }
 
-.top-left {
-  top: 25px;
-  left: 25px;
-}
-
-.top-right {
-  top: 25px;
-  right: 25px;
-}
-
-.bottom-left {
-  bottom: 25px;
-  left: 25px;
-}
-
-/* =========================
-   CENTER DOG
-========================= */
-
-#dog-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -55%);
-  z-index: 5;
-}
-
-#dog-container img {
-  width: 320px;
-  max-width: 90vw;
-  filter: drop-shadow(0 25px 40px rgba(0, 0, 0, 0.25));
-  animation: dogFloat 4s ease-in-out infinite;
-}
-
-@keyframes dogFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
-}
-
-/* =========================
-   LET’S TRY AGAIN BUTTON
-========================= */
-
-#retry-btn {
-  position: absolute;
-  top: calc(50% + 210px);
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 18px 46px;
-  background: #9a622a;
-  color: #fff;
-  font-size: 20px;
-  font-weight: 600;
-  border-radius: 40px;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  z-index: 6;
-}
-
-#retry-btn:hover {
-  transform: translateX(-50%) scale(1.1);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
-}
-
-/* =========================
-   BEATING HEART
-========================= */
-
+/* HEART */
 #heart {
   position: fixed;
-  bottom: 25px;
-  right: 25px;
+  bottom: 20px;
+  right: 20px;
   width: 70px;
-  animation: heartbeat 1.3s infinite;
-  z-index: 8;
+  animation: heartbeat 1.2s infinite;
+  z-index: 9;
 }
 
 @keyframes heartbeat {
   0% { transform: scale(1); }
-  20% { transform: scale(1.15); }
+  25% { transform: scale(1.2); }
   40% { transform: scale(1); }
   60% { transform: scale(1.2); }
-  80% { transform: scale(1); }
   100% { transform: scale(1); }
 }
 
-/* =========================
-   FALLING FLOWERS & BUTTERFLIES
-========================= */
-
-#flowers-container {
+/* CENTER DOG */
+#dog-container {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  text-align: center;
+  z-index: 6;
 }
 
-.floating-item {
-  position: absolute;
-  top: -60px;
-  animation-name: fall;
-  animation-timing-function: linear;
+#dog-container img {
+  width: 320px;
 }
 
-@keyframes fall {
-  to {
-    transform: translateY(110vh) rotate(360deg);
-  }
+/* TRY AGAIN BUTTON */
+#retry-btn {
+  margin-top: 20px;
+  padding: 18px 40px;
+  font-size: 18px;
+  border-radius: 30px;
+  border: none;
+  background: #9c6b2f;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
-/* =========================
-   RANDOM BOWS (STATIC)
-========================= */
-
-#bows-container {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 3;
-}
-
-.bow-item {
-  position: absolute;
-  opacity: 0.85;
-  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.15));
-}
-
-/* =========================
-   MODAL
-========================= */
-
+/* MODAL */
 #modal {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(6px);
-  justify-content: center;
-  align-items: center;
+  background: rgba(0,0,0,0.4);
   z-index: 20;
 }
 
-.modal-content {
-  background: #ffffff;
-  padding: 35px;
-  width: 90%;
-  max-width: 520px;
-  border-radius: 18px;
+#modal-content {
+  background: white;
+  width: 80%;
+  max-width: 800px;
+  margin: 5% auto;
+  padding: 30px;
+  border-radius: 20px;
   position: relative;
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.35);
-  animation: modalPop 0.35s ease;
 }
 
-@keyframes modalPop {
-  from { transform: scale(0.85); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-
-.modal-content h2 {
-  margin-bottom: 15px;
-  color: #2b5f4b;
-}
-
-.modal-content p {
-  font-size: 15px;
-  line-height: 1.6;
-  margin-bottom: 10px;
-}
-
-.close-btn {
+#close {
   position: absolute;
-  top: 14px;
-  right: 16px;
-  font-size: 20px;
+  top: 15px;
+  right: 20px;
+  font-size: 24px;
   cursor: pointer;
-  color: #555;
-}
-
-/* =========================
-   MCQ BUTTONS
-========================= */
-
-.mcq button {
-  margin: 10px;
-  padding: 12px 26px;
-  border-radius: 30px;
-  border: none;
-  background: #e7f5ef;
-  color: #2b5f4b;
-  font-size: 16px;
-  cursor: pointer;
-  transition: transform 0.25s ease;
-}
-
-.mcq button:hover {
-  transform: scale(1.08);
 }
