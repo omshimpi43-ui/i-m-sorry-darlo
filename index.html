@@ -1,55 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>For You</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>I'm Sorry</title>
+
+  <!-- Main Styles -->
+  <link rel="stylesheet" href="style.css" />
 </head>
-    <!-- Falling flowers -->
-<div id="flowers-container"></div>
-
-
-<!-- Butterflies -->
-<div class="butterflies">
-    <div class="butterfly">🦋</div>
-    <div class="butterfly">🦋</div>
-    <div class="butterfly">🦋</div>
-</div>
-
 <body>
 
-<!-- Cute accents -->
-<div class="bow bow-top-left">🎀</div>
-<div class="bow bow-top-right">🎀</div>
+  <!-- Floating decorations -->
+  <div id="flowers-container"></div>
+  <div id="bows-container"></div>
 
-<div class="dog dog-left">🐶</div>
-<div class="dog dog-right">🐕</div>
+  <!-- Corner Buttons -->
+  <button class="corner-btn top-left" onclick="openMemories()">
+    Our Memories
+  </button>
 
-<!-- Bubbles -->
-<button class="bubble top-left" onclick="openModal('memories')">Our Memories</button>
-<button class="bubble top-right" onclick="openModal('apology')">My Apology</button>
-<button class="bubble bottom-left" onclick="openModal('question')">Do You Love Me?</button>
+  <button class="corner-btn top-right" onclick="openApology()">
+    My Apology
+  </button>
 
-<!-- Heart -->
-<div class="heart bottom-right">❤</div>
+  <button class="corner-btn bottom-left" onclick="openLove()">
+    Do You Love Me?
+  </button>
 
-<!-- Modal -->
-<div id="modal" class="modal">
+  <!-- Beating Heart -->
+  <div class="heart-container">
+    <img src="heart.png" alt="heart" class="beating-heart">
+  </div>
+
+  <!-- Center Content -->
+  <div class="center-content">
+    <img src="dog.png" alt="Cute Dog" class="center-dog">
+
+    <button class="try-again-btn" onclick="location.reload()">
+      LET’S TRY AGAIN
+    </button>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
     <div class="modal-content">
-        <span class="close" onclick="closeModal()">×</span>
-        <div id="modal-body"></div>
+      <span class="close" onclick="closeModal()">×</span>
+      <div id="modal-body"></div>
     </div>
-</div>
+  </div>
 
-<script src="script.js"></script>
-    <!-- Center Dog Message -->
-<!-- Center Dog Message -->
-<div class="center-dog">
-  <img src="dog.png" alt="Dog with board" class="dog-img">
-  <div class="dog-board">LET’S TRY AGAIN</div>
-</div>
-
-
+  <!-- Script -->
+  <script src="script.js"></script>
 </body>
 </html>
