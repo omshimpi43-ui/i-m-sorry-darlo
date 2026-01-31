@@ -24,8 +24,39 @@ setInterval(createFloatingItem, 700);
 
 /* MODALS */
 function openMemories() {
-  openModal("<h2>Our Memories</h2><p>The moments that felt safe, warm, and real.</p>");
+  const images = [
+    "img1.jpg.jpeg",
+    "img2.jpg.jpeg",
+    "img3.jpg.jpeg",
+    "img4.jpg.jpeg",
+    "img5.jpg.jpeg",
+    "img6.jpg.jpeg",
+    "img7.jpg.jpeg",
+    "img8.jpg.jpeg",
+    "img9.jpg.jpeg",
+    "img10.jpg.jpeg",
+    "img11.jpg.jpeg",
+    "img12.jpg.jpeg",
+    "img13.jpg.jpeg"
+  ];
+
+  let gallery = `<h2>Our Memories</h2><div class="memory-grid">`;
+
+  images.forEach(img => {
+    gallery += `
+      <img 
+        src="${img}" 
+        class="memory-img" 
+        onclick="window.open('${img}', '_blank')"
+      >
+    `;
+  });
+
+  gallery += `</div>`;
+
+  openModal(gallery);
 }
+
 
 function openApology() {
   openModal("<h2>My Apology</h2><p>I crossed boundaries. I’m working on myself.</p>");
