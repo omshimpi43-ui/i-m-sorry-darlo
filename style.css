@@ -209,3 +209,26 @@ body {
         transform: translateX(120vw) translateY(10px) scale(1);
     }
 }
+/* ===== Falling Flowers (REAL elements) ===== */
+#flowers-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.flower {
+    position: absolute;
+    top: -40px;
+    font-size: 24px;
+    animation-name: fall;
+    animation-timing-function: linear;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0.9;
+    }
+}
