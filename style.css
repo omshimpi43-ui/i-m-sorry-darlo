@@ -154,3 +154,19 @@ body {
   transform: scale(1.05);
   box-shadow: 0 10px 25px rgba(0,0,0,0.25);
 }
+.butterfly {
+  position: fixed;
+  width: 60px;
+  pointer-events: none;
+  z-index: 6;
+  animation: flyAcross linear;
+}
+
+@keyframes flyAcross {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(120vw);
+  }
+}
