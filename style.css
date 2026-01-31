@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f8;
+    color: #333;
+}
+
+.container {
+    max-width: 600px;
+    margin: 60px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #222;
+}
+
+p {
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+.final {
+    margin-top: 30px;
+    font-style: italic;
+}
+
+footer {
+    margin-top: 40px;
+    text-align: right;
+    font-weight: bold;
+}
