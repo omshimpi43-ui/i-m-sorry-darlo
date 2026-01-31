@@ -2,19 +2,38 @@ function openModal(type) {
     const modal = document.getElementById("modal");
     const body = document.getElementById("modal-body");
 
-    if (type === "memories") {
-        body.innerHTML = `
-            <h3>Our Memories</h3>
-            <p>
-                The small conversations.  
-                The laughter.  
-                The moments that felt safe and real.
-            </p>
-            <p>
-                I hold them quietly, with gratitude.
-            </p>
-        `;
-    }
+   if (type === "memories") {
+    body.innerHTML = `
+        <h3>Our Memories</h3>
+
+        <p>
+            The small conversations.  
+            The laughter.  
+            The moments that felt safe and real.
+        </p>
+
+        <div class="memory-gallery">
+            <img src="img1.jpg.jpeg">
+            <img src="img2.jpg.jpeg">
+            <img src="img3.jpg.jpeg">
+            <img src="img4.jpg.jpeg">
+            <img src="img5.jpg.jpeg">
+            <img src="img6.jpg.jpeg">
+            <img src="img7.jpg.jpeg">
+            <img src="img8.jpg.jpeg">
+            <img src="img9.jpg.jpeg">
+            <img src="img10.jpg.jpeg">
+            <img src="img11.jpg.jpeg">
+            <img src="img12.jpg.jpeg">
+            <img src="img13.jpg.jpeg">
+        </div>
+
+        <p>
+            I hold them quietly, with gratitude.
+        </p>
+    `;
+}
+
 
     if (type === "apology") {
         body.innerHTML = `
