@@ -137,3 +137,75 @@ body {
     color: #065f46;
     font-weight: 600;
 }
+/* ===== Falling Flowers ===== */
+.flowers {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.flowers::before {
+    content: "🌸 🌼 🌷 💐 🌺 🌸 🌼 🌷";
+    position: absolute;
+    top: -10%;
+    left: 0;
+    width: 100%;
+    font-size: 24px;
+    animation: flowersFall 12s linear infinite;
+}
+
+@keyframes flowersFall {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0.9;
+    }
+    100% {
+        transform: translateY(110%);
+        opacity: 0.9;
+    }
+}
+
+/* ===== Butterflies ===== */
+.butterflies {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+}
+
+.butterfly {
+    position: absolute;
+    font-size: 30px;
+    animation: fly 10s ease-in-out infinite;
+    opacity: 0.85;
+}
+
+.butterfly:nth-child(1) {
+    top: 20%;
+    left: -10%;
+    animation-delay: 0s;
+}
+
+.butterfly:nth-child(2) {
+    top: 50%;
+    left: -15%;
+    animation-delay: 3s;
+}
+
+.butterfly:nth-child(3) {
+    top: 75%;
+    left: -20%;
+    animation-delay: 6s;
+}
+
+@keyframes fly {
+    0% {
+        transform: translateX(0) translateY(0) scale(1);
+    }
+    50% {
+        transform: translateX(60vw) translateY(-30px) scale(1.15);
+    }
+    100% {
+        transform: translateX(120vw) translateY(10px) scale(1);
+    }
+}
