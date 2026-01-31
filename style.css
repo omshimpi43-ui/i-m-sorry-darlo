@@ -190,3 +190,10 @@ body {
   60%  { transform: scale(1.2); }
   100% { transform: scale(1); }
 }
+.apology-text {
+  text-align: left;
+  line-height: 1.6;
+  font-size: 16px;
+  color: #333;
+  white-space: normal;
+}
