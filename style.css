@@ -282,10 +282,13 @@ body {
     animation: gentleFloat 4s ease-in-out infinite;
 }
 
-.dog {
-    font-size: 90px;
-    line-height: 1;
+.dog-img {
+    width: 180px;
+    height: auto;
+    user-select: none;
+    pointer-events: none;
 }
+
 
 .dog-board {
     margin-top: -10px;
