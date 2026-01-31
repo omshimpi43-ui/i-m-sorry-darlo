@@ -83,7 +83,41 @@ function openMemories() {
 
 
 function openApology() {
-  openModal("<h2>My Apology</h2><p>I crossed boundaries. I’m working on myself.</p>");
+  openModal("<h2>My Apology</h2><p>i understand why r u upset , i was wrong , i m sorry for hurting you , i want to know not argue , i will fix this
+
+
+i intended care 
+u experienced control 
+
+
+from u r pov its surviellance , lack of trust 
+but for me it is knowing about you 
+
+
+i will stop asking where are you with whom are you what are you doing whats the need 
+
+i understand now that my questions made you feel controlled but that wasnt my intention and i respect how it felt to you 
+I M SORRY 
+I TRUST YOU 
+I WILL GIVE U SPACE 
+
+
+i do ask u questions because i fear losing you 
+i cannot protect you just by knowing where r u 
+i cannot prevent any loss by knowing where r u 
+but the one u r with can do both protect and prevent loss 
+
+
+i ask you because 
+i feel uneasy 
+i feel frightened 
+i imagine scenarios 
+
+
+i realise my fear made me cross your boundaries 
+i wasnt trying to control you i was anxious about you 
+still this is my resposibility not yours 
+i will work on it</p>");
 }
 
 function openLove() {
