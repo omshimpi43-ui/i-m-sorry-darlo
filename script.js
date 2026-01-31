@@ -1,139 +1,124 @@
-const modal = document.getElementById("modal");
+/* =========================
+   MODAL CONTROLS
+========================= */
 
-function openModal(type) {
-    const modal = document.getElementById("modal");
-    const body = document.getElementById("modal-body");
-
-if (type === "memories") {
-    modal.classList.add("fullscreen");
-
-    body.innerHTML = `
-        <h3>Our Memories</h3>
-
-        <p>
-            The small conversations.  
-            The laughter.  
-            The moments that felt safe and real.
-        </p>
-
-        <div class="memory-gallery">
-            <img src="img1.jpg.jpeg">
-            <img src="img2.jpg.jpeg">
-            <img src="img3.jpg.jpeg">
-            <img src="img4.jpg.jpeg">
-            <img src="img5.jpg.jpeg">
-            <img src="img6.jpg.jpeg">
-            <img src="img7.jpg.jpeg">
-            <img src="img8.jpg.jpeg">
-            <img src="img9.jpg.jpeg">
-            <img src="img10.jpg.jpeg">
-            <img src="img11.jpg.jpeg">
-            <img src="img12.jpg.jpeg">
-            <img src="img13.jpg.jpeg">
-        </div>
-
-        <p>
-            I hold them quietly, with gratitude.
-        </p>
-    `;
+function openMemories() {
+  openModal(`
+    <h2>Our Memories</h2>
+    <p>
+      The small conversations. The laughter.
+      The moments that felt safe and real.
+    </p>
+    <p>I hold them quietly, with gratitude.</p>
+  `);
 }
 
+function openApology() {
+  openModal(`
+    <h2>My Apology</h2>
+    <p>
+      I never wanted to control you.
+      I only cared deeply.
+    </p>
+    <p>
+      I’m sorry for the fear I let speak louder than trust.
+    </p>
+  `);
+}
 
+function openLove() {
+  openModal(`
+    <h2>Do You Love Me?</h2>
+    <div class="mcq">
+      <button onclick="answer('yes')">Yes</button>
+      <button onclick="answer('no')">No</button>
+      <p id="answer-text"></p>
+    </div>
+  `);
+}
 
-    if (type === "apology") {
-        body.innerHTML = `
-            <h3>My Apology</h3>
-            <p>
-                I crossed a boundary, and I understand that now.
-                What I thought was care felt like control.
-            </p>
-            <p>
-                I take responsibility, and I am working on myself.
-            </p>
-            <p><em>Take all the time you need.</em></p>
-        `;
-    }
-
-    if (type === "question") {
-        body.innerHTML = `
-            <h3>Do You Love Me?</h3>
-            <button class="mcq-btn" onclick="answer('yes')">Yes</button>
-            <button class="mcq-btn" onclick="answer('no')">No</button>
-            <p id="answer-text"></p>
-        `;
-    }
-
-    modal.style.display = "flex";
+function openModal(content) {
+  const modal = document.getElementById("modal");
+  const body = document.getElementById("modal-body");
+  body.innerHTML = content;
+  modal.style.display = "flex";
 }
 
 function closeModal() {
-    const modal = document.getElementById("modal");
-    modal.style.display = "none";
-    modal.classList.remove("fullscreen");
+  document.getElementById("modal").style.display = "none";
 }
 
 function answer(choice) {
-    const text = document.getElementById("answer-text");
-    if (choice === "yes") {
-        text.innerHTML = "That means more than you know.";
-    } else {
-        text.innerHTML = "Thank you for being honest.";
-    }
+  const text = document.getElementById("answer-text");
+  if (choice === "yes") {
+    text.innerText = "That means more than you know.";
+  } else {
+    text.innerText = "Thank you for being honest.";
+  }
 }
-/* ===== Falling Flowers Generator ===== */
-const flowerImages = [
+
+/* =========================
+   FALLING FLOWERS & BUTTERFLIES (PNG)
+========================= */
+
+const floatingImages = [
   "flower1.png",
   "flower2.png",
   "flower3.png",
-  "flower4.png"
+  "butterfly1.png",
+  "butterfly2.png"
 ];
 
+function createFloatingItem() {
+  const container = document.getElementById("flowers-container");
+  const item = document.createElement("img");
 
-function createFlower() {
-  const flower = document.createElement("img");
-  flower.src =
-    flowerImages[Math.floor(Math.random() * flowerImages.length)];
+  item.src = floatingImages[Math.floor(Math.random() * floatingImages.length)];
+  item.className = "floating-item";
 
-  flower.classList.add("flower");
+  item.style.left = Math.random() * 100 + "vw";
+  item.style.animationDuration = 8 + Math.random() * 6 + "s";
+  item.style.width = 30 + Math.random() * 25 + "px";
 
-  flower.style.left = Math.random() * 100 + "vw";
-  flower.style.top = "-10vh";
-  flower.style.width = 30 + Math.random() * 30 + "px";
-  flower.style.animationDuration = 8 + Math.random() * 6 + "s";
-
-  document.getElementById("flowers-container").appendChild(flower);
+  container.appendChild(item);
 
   setTimeout(() => {
-    flower.remove();
+    item.remove();
   }, 15000);
 }
 
-/* ==== Butterfly PNG Generator ==== */
+setInterval(createFloatingItem, 700);
 
-const butterflyImages = [
-  "butterfly1.png",
-  "butterfly2.png",
-  "butterfly3.png"
-];
+/* =========================
+   RANDOM BOWS (10 TOTAL)
+========================= */
 
-function createButterfly() {
-  const butterfly = document.createElement("img");
-  butterfly.src =
-    butterflyImages[Math.floor(Math.random() * butterflyImages.length)];
+function createBows() {
+  const container = document.getElementById("bows-container");
 
-  butterfly.classList.add("butterfly");
+  for (let i = 0; i < 10; i++) {
+    const bow = document.createElement("img");
+    bow.src = "bow.png";
+    bow.className = "bow-item";
 
-  butterfly.style.left = Math.random() * 100 + "vw";
-  butterfly.style.top = "110vh";
-  butterfly.style.animationDuration = 10 + Math.random() * 6 + "s";
+    bow.style.top = Math.random() * 100 + "vh";
+    bow.style.left = Math.random() * 100 + "vw";
+    bow.style.transform = `rotate(${Math.random() * 360}deg)`;
+    bow.style.width = "40px";
 
-  document.body.appendChild(butterfly);
-
-  setTimeout(() => {
-    butterfly.remove();
-  }, 16000);
+    container.appendChild(bow);
+  }
 }
 
-setInterval(createButterfly, 3500);
+createBows();
 
-setInterval(createFlower, 500);
+/* =========================
+   CLICK OUTSIDE MODAL TO CLOSE
+========================= */
+
+window.onclick = function (e) {
+  const modal = document.getElementById("modal");
+  if (e.target === modal) {
+    closeModal();
+  }
+};
