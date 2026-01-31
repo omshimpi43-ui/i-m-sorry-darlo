@@ -3,10 +3,10 @@ const floatContainer = document.getElementById("float-container");
 const floatImages = [
   "flower1.png",
   "flower2.png",
-  "butterfly1.png",
-  "butterfly2.png",
-  "rose.png"
+  "flower3.png",
+  "flower4.png"
 ];
+
 
 function createFloatingItem() {
   const img = document.createElement("img");
@@ -21,6 +21,30 @@ function createFloatingItem() {
 }
 
 setInterval(createFloatingItem, 700);
+/* BUTTERFLY GENERATOR (SEPARATE) */
+const butterflyImages = [
+  "butterfly1.png",
+  "butterfly2.png",
+  "butterfly3.png"
+];
+
+function createButterfly() {
+  const butterfly = document.createElement("img");
+  butterfly.src = butterflyImages[Math.floor(Math.random() * butterflyImages.length)];
+  butterfly.className = "butterfly";
+
+  const fromLeft = Math.random() > 0.5;
+  butterfly.style.top = Math.random() * 80 + "vh";
+  butterfly.style.left = fromLeft ? "-80px" : "100vw";
+  butterfly.style.animationDuration = (10 + Math.random() * 8) + "s";
+  butterfly.style.transform = fromLeft ? "scaleX(1)" : "scaleX(-1)";
+
+  document.body.appendChild(butterfly);
+
+  setTimeout(() => butterfly.remove(), 20000);
+}
+
+setInterval(createButterfly, 1500);
 
 /* MODALS */
 function openMemories() {
